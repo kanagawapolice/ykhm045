@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <body>
+        <div 
+            style="margin-left: 7rem;margin-top: 21rem;"
+        >
+            <img src="./00.jpg" id="imgId" >
+            <p style="color: #95A5BB;font-size: 2rem;
+                margin-left: 6rem;
+                margin-top: 21rem;"
+            >
+                画师：棉花<br>
+                技术支持：@谢邀人在中王区刚泥完塑<br>
+                排版&印刷：@点心番长去往云之彼岸<br>
+            </p>
+        </div>
+        <script type="text/javascript">
+            let nowPic = './00.jpg';
+            let countPic = 0; // 图片计数器
+            const groupPic = [
+                "./00.jpg",
+                "./01.jpg"
+            ];
+            window.onload = function() {
+                nowPic = groupPic[0];
+				let interval = setInterval(function() {
+					countPic ++;
+                    if( countPic > 1 ) {
+						countPic = 0;
+						nowPic = groupPic[countPic];
+                        document.getElementById('imgId').src = nowPic;
+					} else {
+                        nowPic = groupPic[countPic];
+                        document.getElementById('imgId').src = nowPic;                        
+                    }
+				}, 400);
+            }
+        </script>
+    </body>
+</html>
